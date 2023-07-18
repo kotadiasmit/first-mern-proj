@@ -4,7 +4,6 @@ const url = "http://localhost:2000";
 
 const getAllTodo = (setTodoList) => {
   axios.get(`${url}/todos`).then(({ data }) => {
-    console.log(data);
     setTodoList(data);
   });
 };
@@ -22,14 +21,12 @@ const updateTodoStatus = (todoData, setTodoList) => {
 };
 
 const updateTodo = (todoData, setTodoList) => {
-  console.log(todoData);
   axios.patch(`${url}/todo/update`, todoData).then(() => {
     getAllTodo(setTodoList);
   });
 };
 
 const deleteTodo = (_id, setTodoList) => {
-  console.log(_id);
   axios.delete(`${url}/todo/delete`, { data: { _id } }).then(() => {
     getAllTodo(setTodoList);
   });

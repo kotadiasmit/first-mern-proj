@@ -22,7 +22,6 @@ const getTodoById = (req, res) => {
 };
 
 const updateTodoStatus = (req, res) => {
-  console.log(req.body);
   const { _id, isChecked } = req.body;
   if (_id) {
     Todo.findByIdAndUpdate(_id, { isChecked })
@@ -38,7 +37,6 @@ const updateTodoStatus = (req, res) => {
 };
 
 const updateTodo = (req, res) => {
-  console.log(req.body);
   const { _id, text } = req.body;
   if (_id) {
     Todo.findByIdAndUpdate(_id, { text })
@@ -54,7 +52,6 @@ const updateTodo = (req, res) => {
 };
 const deleteTodo = (req, res) => {
   const { _id } = req.body;
-  console.log(req.body);
   if (_id) {
     Todo.findByIdAndDelete(_id)
       .then((result) => res.status(200).send("data deleted successfully"))

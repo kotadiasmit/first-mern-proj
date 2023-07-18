@@ -1,9 +1,10 @@
 import TodoApp from "./TodoApp";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
   return (
-    <div className="todos-bg-container d-flex flex-row">
+    <div className="todos-bg-container">
       <div className="container">
         <h1 className="todos-heading">Todos</h1>
         <h1 className="create-task-heading">

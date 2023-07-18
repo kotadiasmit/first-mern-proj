@@ -4,7 +4,7 @@ import { addTodo, getAllTodo, updateTodo } from "./Apis";
 import TodoItem from "./TodoItems";
 import "react-toastify/dist/ReactToastify.css";
 
-let updateTodoId = "todo0";
+let updateTodoId = null;
 
 const TodoApp = () => {
   const [todoList, setTodoList] = useState([]);
@@ -15,18 +15,6 @@ const TodoApp = () => {
     const { value } = event.target;
     setTodoInputValue(value);
   };
-  console.log(typeof todoList);
-  // useEffect(() => {
-  //   getApi();
-  // }, []);
-
-  // const getApi = async () => {
-  //   const response = await fetch(
-  //     "https://official-joke-api.appspot.com/random_joke"
-  //   );
-  //   console.log(await response.json());
-  //   console.log(123);
-  // };
 
   useEffect(() => {
     getAllTodo(setTodoList);
